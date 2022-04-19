@@ -1,0 +1,83 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.container {
+    width: 200px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.select-button {
+    position: relative;
+    width: 100%;
+    padding: 11px 20px 11px 13px;
+    text-align: left;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.select-button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(./images/Polygon\ 1.svg);
+    background-repeat: no-repeat;
+    background-position: left 14px center;
+    transform: rotate(180deg);
+}
+
+.select-button:focus {
+    outline: 3px solid #f8e4ff;
+    border-color: #9b51e0;
+}
+
+.select-button.on::after {
+    background-position: right 14px center;
+    transform: rotate(0deg);
+}
+
+.select-button.on + .list-box {
+    display: block;
+}
+
+.list-box {
+    display: none;
+    border: 1px solid #c4c4c4;
+    border-radius: 10px;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.2);
+    margin-top: 9px;
+}
+
+.list-box li {
+    padding: 5px 10px;
+}
+
+.list-box li button {
+    display: block;
+    width: 100%;
+    padding: 8px 0 10px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    text-align: left;
+}
+
+.list-box li button:focus,
+.list-box li button:hover {
+    background-color: #f8e4ff;
+}
